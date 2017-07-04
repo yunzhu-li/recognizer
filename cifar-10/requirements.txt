@@ -1,0 +1,4 @@
+tensorflow>=1.2.1
+# tensorflow-gpu>=1.2.1
+tflearn>=0.3.2
+scipy>=0.19.1
