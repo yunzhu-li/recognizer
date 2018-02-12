@@ -1,6 +1,6 @@
 ## CIFAR-10
 
-CIFAR-10 classification (CNN)
+CIFAR-10 classification (CNN) using TFLearn
 
 ### Environment Setup
 
