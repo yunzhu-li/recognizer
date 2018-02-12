@@ -2,9 +2,9 @@
 
 MNIST classification (CNN) using TensorFlow
 
-Code slightly modified from [this tutorial](https://www.tensorflow.org/tutorials/layers).
-
-Added ability for predicting from arbitrary number (sort of) image files from the command line.
+- Code slightly modified from [this tutorial](https://www.tensorflow.org/tutorials/layers).
+- Added ability for predicting from arbitrary number (sort of) image files from the command line.
+- Trained model available at [here](https://storage.cloud.google.com/bp-ml-models/180211_mnist_convnet_model.tar.gz) (might require a blupig.net account).
 
 ### Environment Setup
 
