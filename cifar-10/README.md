@@ -2,6 +2,9 @@
 
 CIFAR-10 classification (CNN) using TFLearn
 
+- Modified from https://github.com/tflearn/tflearn/blob/master/examples/images/convnet_cifar10.py
+- Trained model available at [here](https://storage.cloud.google.com/bp-ml-models/180212_cifar_10_model.tflearn.tar.gz) (might require a blupig.net account).
+
 ### Environment Setup
 
 Assuming `python3` and `virtualenv` are installed.
