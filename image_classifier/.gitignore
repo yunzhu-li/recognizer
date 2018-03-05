@@ -1,0 +1,11 @@
+# Data files
+tiny-imagenet-200/
+
+# Test data
+test_images/
+
+# HPC scripts
+kong/
+
+# Logs for Tensorboard
+logs/
