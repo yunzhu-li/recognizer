@@ -3,7 +3,7 @@
 Image classification (CNN) with Keras + TensorFlow on Tiny ImageNet dataset
 
 - Custom developed model
-- Trained model available at [here](https://storage.cloud.google.com/bp-ml-models/180301_tiny_imagenet_weights.h5) (might require a blupig.net account)
+- Trained model available at [here](https://storage.cloud.google.com/bp-ml-models/180301_tiny_imagenet_weights.h5) (requires a `blupig.net` account to access)
 - Data from https://tiny-imagenet.herokuapp.com/
 
 ### Program files

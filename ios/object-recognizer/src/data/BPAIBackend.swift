@@ -24,7 +24,24 @@ import AlamofireObjectMapper
 import ObjectMapper
 
 class BPAIBackend: NSObject {
-    private static let apiBaseURL: String = "https://api.blupig.net/ai"
+    private static let apiBaseURL: String = "https://api.blupig.net/ai/images"
+
+    static func apiInfo(completionHandler: @escaping (APIInfoResponse?, String?) -> Void) {
+        // Make request
+        Alamofire.request(apiBaseURL + "/info").validate(statusCode: 200..<300).responseObject { (response: DataResponse<APIInfoResponse>) in
+            switch response.result {
+            case .success:
+                if let r = response.result.value {
+                    completionHandler(r, nil)
+                } else {
+                    completionHandler(nil, "Request failed: no data")
+                }
+                break
+            case .failure(let error):
+                completionHandler(nil, "Request failed: " + error.localizedDescription)
+            }
+        }
+    }
 
     static func annotateImage(image: UIImage, completionHandler: @escaping ([ImageAnnotation]?, String?) -> Void) {
         // Prepare request
@@ -39,7 +56,7 @@ class BPAIBackend: NSObject {
         // Send request
         Alamofire.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(imageData!, withName: "image", fileName: "image", mimeType: "image/jpeg")
-        }, to: apiBaseURL + "/images/annotate", encodingCompletion: { encodingResult in
+        }, to: apiBaseURL + "/annotate", encodingCompletion: { encodingResult in
             // Check request encoding result
             switch encodingResult {
             case .success(request: let upload, streamingFromDisk: _, streamFileURL: _):
@@ -63,6 +80,18 @@ class BPAIBackend: NSObject {
                 break
             }
         })
+    }
+}
+
+class APIInfoResponse: Mappable {
+    public var loaded_model: String?
+    public var error: String?
+
+    required init?(map: Map) {}
+
+    func mapping(map: Map) {
+        loaded_model <- map["loaded_model"]
+        error        <- map["error"]
     }
 }
 

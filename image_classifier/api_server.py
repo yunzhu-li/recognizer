@@ -17,6 +17,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 '''
 
 # Train
+import os
 import sys
 import flask
 from flask import request
@@ -39,8 +40,19 @@ def health():
     return 'ok'
 
 
+# API info
+@app.route('/info')
+def info():
+    results = {
+        'loaded_model': os.path.basename(trained_model_path),
+        'error': None
+    }
+
+    return flask.jsonify(results)
+
+
 # Annotate route
-@app.route('/images/annotate', methods=['POST'])
+@app.route('/annotate', methods=['POST'])
 def annotate():
     status = 200
     results = None
