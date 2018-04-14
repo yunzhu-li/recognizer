@@ -10,6 +10,7 @@ Image classification (CNN) with Keras + TensorFlow on Tiny ImageNet dataset
 
 | File          | Description                                             |
 |---------------|---------------------------------------------------------|
+| packer/       | Packer template to create VM image for GPU training     |
 | model.py      | CNN model with multi GPU support                        |
 | train.py      | Training script for model development                   |
 | predit.py     | Prediction script for model development                 |
