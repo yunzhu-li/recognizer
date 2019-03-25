@@ -4,6 +4,8 @@
 
 A real-time image recognition program based on deep convolutional neural networks.
 
+**Demo video:** https://youtu.be/l3ZcyhA8Bhg
+
 ## Directories
 
 | Directory        | Description                                                           |
